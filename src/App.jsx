@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import PreNavbar from './Components/PreNavbar';
@@ -8,11 +8,12 @@ import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import NotFound from './Pages/NotFound'; // <-- Import NotFound
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col font-sans">
+      <div className="min-h-screen flex flex-col font-sans bg-[#1b1b1b] text-white">
         <PreNavbar />
         <Navbar />
 
@@ -35,6 +36,7 @@ const App = () => {
                 </div>
               }
             />
+            <Route path="*" element={<NotFound />} /> {/* <-- Catch-all */}
           </Routes>
         </div>
 

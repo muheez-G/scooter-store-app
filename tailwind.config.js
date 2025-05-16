@@ -7,9 +7,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'Roboto', 'sans-serif'],
+        sans: ["Poppins", "sans-serif"],
       },
+  animation: {
+    grow: 'grow 6s linear infinite'
+  },
+  keyframes: {
+    grow: {
+      '0%': { height: '0%' },
+      '100%': { height: '100px' }
+    }
+  }
     },
   },
   plugins: [],
 }
+
