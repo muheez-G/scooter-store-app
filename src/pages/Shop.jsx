@@ -168,7 +168,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-10 text-white">
+    <div className="px-4 sm:px-8 pt-[4rem] md:px-10 lg:px-12 xl:px-16 py-10 text-white">
       {/* Top Section */}
       <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
         <img src={product21} alt="Product Highlight" className="w-full md:w-1/2 rounded-xl" />
