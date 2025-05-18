@@ -1,74 +1,79 @@
 import React, { useState } from 'react';
-import { FaXTwitter, FaFacebookF, FaInstagram, FaTruckFast, FaCircleCheck, FaBatteryFull, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
+import {
+  FaXTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaTruckFast,
+  FaCircleCheck,
+  FaBatteryFull,
+  FaChevronLeft,
+  FaChevronRight,
+} from 'react-icons/fa6';
 
 const PreNavbar = () => {
-  // Promo messages array
   const promoMessages = [
     {
       icon: <FaTruckFast className="text-green-400" />,
-      text: "Free shipping on orders over $50",
+      text: 'Free shipping on orders over $50',
     },
     {
       icon: <FaBatteryFull className="text-yellow-400" />,
-      text: "Battery lasts up to 120 miles",
+      text: 'Battery lasts up to 120 miles',
     },
     {
       icon: <FaCircleCheck className="text-blue-400" />,
-      text: "2-year warranty included",
+      text: '2-year warranty included',
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Navigate back
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + promoMessages.length) % promoMessages.length);
   };
 
-  // Navigate forward
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % promoMessages.length);
   };
 
   return (
-    <div className="w-full bg-[#1b1b1b] px-4 md:px-8 py-4 flex items-center justify-between text-sm">
-      {/* Social Icons */}
-      <div className="flex gap-4">
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition">
-          <FaXTwitter size={20} />
+    <div className="w-full bg-[#1b1b1b] px-6 md:px-10 py-4 flex items-center justify-between text-sm">
+      {/* Left: Social Icons */}
+      <div className="flex items-center gap-4">
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+          <FaXTwitter size={18} />
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition">
-          <FaFacebookF size={20} />
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+          <FaFacebookF size={18} />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition">
-          <FaInstagram size={20} />
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+          <FaInstagram size={18} />
         </a>
       </div>
 
-      {/* Center Promo with Arrows */}
-      <div className="text-white font-medium flex items-center gap-2 select-none">
-        {/* Left Arrow */}
+      {/* Center Promo (hidden on mobile) */}
+      <div className="hidden sm:flex text-white font-medium items-center gap-3 select-none">
         <button onClick={handlePrev} className="text-gray-300 hover:text-white transition">
           <FaChevronLeft size={16} />
         </button>
-
-        {/* Current Promo Message */}
-        <div className="flex items-center gap-2 px-2 text-center whitespace-nowrap">
+        <div className="flex items-center gap-2 text-center whitespace-nowrap">
           {promoMessages[currentIndex].text}
           {promoMessages[currentIndex].icon}
         </div>
-
-        {/* Right Arrow */}
         <button onClick={handleNext} className="text-gray-300 hover:text-white transition">
           <FaChevronRight size={16} />
         </button>
       </div>
 
-      {/* CTA Button */}
+      {/* Right: Shop Now Button */}
       <div>
-        <button className="bg-black text-white text-xs px-4 py-1 rounded hover:bg-gray-800 transition">
+        <Link
+          to="/shop"
+          className="bg-green-500 text-white text-xs px-5 py-1.5 rounded hover:bg-green-600 transition"
+        >
           Shop Now
-        </button>
+        </Link>
       </div>
     </div>
   );

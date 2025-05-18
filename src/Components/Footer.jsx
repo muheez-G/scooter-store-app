@@ -20,15 +20,15 @@ const Footer = () => {
               ensuring quality EVs on the road.
             </p>
             <div className="flex items-start gap-2 text-sm text-gray-300">
-              <GrLocation className="mt-1 text-white" />
+              <GrLocation className="mt-1 text-green-500" />
               <p>8642 Yule Street, Arvada CO 80007</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-300">
-              <MdAddIcCall className='text-green'/>
+              <MdAddIcCall className='text-green-500'/>
               <p>+(248) 762-0356</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-300">
-              <LuMessageSquare className='text-green'/>
+              <LuMessageSquare className='text-green-500'/>
               <p>support@road.com</p>
             </div>
           </div>
@@ -65,13 +65,13 @@ const Footer = () => {
               </button>
             </div>
             <div className="flex gap-4 mt-2">
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
                 <FaXTwitter size={20} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
                 <FaFacebookF size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
                 <FaInstagram size={20} />
               </a>
             </div>

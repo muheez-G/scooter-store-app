@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import Shop from './Pages/Shop';
 import NotFound from './Pages/NotFound'; // <-- Import NotFound
 
 const App = () => {
@@ -33,6 +34,14 @@ const App = () => {
               element={
                 <div className="px-6 py-8">
                   <Contact />
+                </div>
+              }
+            />
+            <Route
+              path="/shop"
+              element={
+                <div className="px-6 py-8">
+                  <Shop />
                 </div>
               }
             />

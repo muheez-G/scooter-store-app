@@ -14,7 +14,7 @@ const HeroNext = () => {
     let animationFrameId;
 
     const move = () => {
-      offset -= 5; // Faster scroll speed
+      offset -= 5;
       marquee.style.transform = `translateX(${offset}px)`;
       if (Math.abs(offset) >= marquee.scrollWidth / 2) {
         offset = 0;
@@ -33,7 +33,6 @@ const HeroNext = () => {
 
     containerRef.current.addEventListener('mouseenter', stop);
     containerRef.current.addEventListener('mouseleave', start);
-
     start();
 
     return () => {
@@ -43,94 +42,87 @@ const HeroNext = () => {
     };
   }, []);
 
-  const sliderTexts = [
-    'Explore green, black variant',
-    'Go eco-friendly, good mileage',
-    'Stylish design, user-focused build',
-    'Disc brake, smooth cushion seat',
-    'Fast charge, lightweight frame',
-  ];
-
   return (
-    <div className="py-12  overflow-hidden relative">
-      <h2 className="text-center text-4xl font-bold text-white mb-4">
+    <div className="py-12 px-4 sm:px-8 md:px-12 overflow-hidden relative">
+      {/* Headings */}
+      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
         Spark Your Ride With Electric Power
       </h2>
-      <p className="text-center text-lg text-white max-w-xl mx-auto mb-6">
+      <p className="text-center text-base sm:text-lg text-white max-w-xl mx-auto mb-6">
         With electric power shaping the future of the globe, explore our most reliable products now.
       </p>
-      <img src={img2} alt="Electric Vehicle" className="w-[94vw] mx-auto py-4" />
 
-      <div className="flex justify-between px-44 flex-wrap gap-9 my-8 text-center">
+      {/* Vehicle Image */}
+      <img src={img2} alt="Electric Vehicle" className="w-full sm:w-[94vw] mx-auto py-4" />
+
+      {/* Stats Section */}
+      <div className="flex flex-wrap justify-center sm:justify-between gap-8 my-8 text-center px-4">
         {[
           { title: '60 mph', desc: '4-Speed Mode' },
           { title: '120 mi', desc: 'Range 4Km' },
           { title: '440 lbs', desc: 'Frame Weight' },
           { title: '24 kw', desc: 'Per Charge' },
         ].map((item, i) => (
-          <span key={i} className="text-xl font-bold text-white">
-            <h3 className="text-4xl font-extrabold">{item.title}</h3>
-            <p className="text-base text-white">{item.desc}</p>
-          </span>
+          <div key={i} className="text-white">
+            <h3 className="text-3xl sm:text-4xl font-extrabold">{item.title}</h3>
+            <p className="text-sm sm:text-base">{item.desc}</p>
+          </div>
         ))}
       </div>
 
-      <p className="text-center text-base text-white max-w-4xl mx-auto mb-8">
+      {/* Description */}
+      <p className="text-center text-sm sm:text-base text-white max-w-3xl mx-auto mb-10 px-4">
         Are you ready to take your ride to new heights? Say goodbye to noisy engines.
         Explore the future of transportation with our awe-inspiring electric vehicle.
       </p>
 
-      {/* Buttons with line passing through */}
-      <div className="relative w-full flex justify-center items-center py-8">
+      {/* CTA Buttons */}
+      <div className="relative w-full flex justify-center items-center py-6 sm:py-8">
         <div className="absolute h-px w-full bg-gray-400 z-0" style={{ top: '50%' }} />
-        <div className="flex justify-center gap-4 relative z-10 px-4">
-          <Link to="/contact">
-            <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">
+        <div className="flex flex-col sm:flex-row gap-4 z-10 px-4">
+          <Link to="/shop">
+            <button className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition w-full sm:w-auto">
               Buy now
             </button>
           </Link>
-          <Link to="/contact">
-            <button className="bg-white border-2 border-green-600 text-green-600 px-6 py-2 rounded-full hover:bg-green-600 hover:text-white transition">
+          <Link to="/shop">
+            <button className="bg-white border-2 border-green-600 text-green-600 px-6 py-2 rounded-full hover:bg-green-600 hover:text-white transition w-full sm:w-auto">
               View shop
             </button>
           </Link>
         </div>
       </div>
 
-      {/* Scrolling slider container (centered and smoothed) */}
+      {/* Marquee Section */}
       <div
         ref={containerRef}
-        className="relative overflow-hidden w-full"
-        style={{ height: '100px', position: 'relative', top: '50px' }} // 👈 Move slider down for better visual centering
+        className="relative overflow-hidden w-full h-[60px] sm:h-[80px] md:h-[100px] bg-[#121212] flex items-center"
       >
-        {/* Scrolling text centered vertically */}
         <div
           ref={marqueeRef}
-          className="flex items-center gap-12 text-white text-4xl font-semibold whitespace-nowrap 
-          px-6 absolute top-[14px] transform -translate-y-1/2 z-5"
+          className="flex items-center gap-8 text-white text-lg sm:text-xl md:text-3xl font-semibold whitespace-nowrap px-6 z-10"
           style={{ willChange: 'transform' }}
         >
           {Array.from({ length: 6 }).map((_, idx) =>
-            sliderTexts.map((text, i) => (
+            [
+              'Explore green, black variant',
+              'Go eco-friendly, good mileage',
+              'Stylish design, user-focused build',
+              'Disc brake, smooth cushion seat',
+              'Fast charge, lightweight frame',
+            ].map((text, i) => (
               <React.Fragment key={`${idx}-${i}`}>
                 <span>{text}</span>
-                {i !== sliderTexts.length - 1 && (
-                  <span className="text-white text-7xl mx-8 leading-none relative top-[10px]">*</span> // 👈 Adjust vertical alignment of asterisk
+                {i !== 4 && (
+                  <span className="text-white text-2xl sm:text-4xl mx-4 sm:mx-6">•</span>
                 )}
               </React.Fragment>
             ))
           )}
         </div>
 
-        {/* Gradient overlay to focus attention on center */}
-        {/* Comment this block if you want to remove the gradient overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            zIndex: 10,
-            background: 'radial-gradient(circle,rgba(255, 255, 255, 0.07) 0%, rgba(0,0,0,0.8) 70%)',
-          }}
-        />
+        {/* Optional gradient overlay */}
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black via-transparent to-black opacity-60 z-20" />
       </div>
     </div>
   );

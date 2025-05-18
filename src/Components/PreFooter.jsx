@@ -23,8 +23,8 @@ import { Link } from 'react-router-dom';
 const PreFooter = () => {
   return (
     <div className="space-y-0">
-      {/* First Section - Logos shown first with overlay */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 cursor-pointer md:grid-cols-6 w-full">
+      {/* First Section - Logos */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 w-full">
         {[
           { img: img1, hover: img12 },
           { img: img2, hover: img23 },
@@ -35,20 +35,16 @@ const PreFooter = () => {
         ].map(({ img, hover }, i) => (
           <span
             key={i}
-            className="relative group overflow-hidden bg-[#2b2b2b] flex items-center justify-center h-32"
+            className="relative group overflow-hidden bg-[#2b2b2b] flex items-center justify-center h-24 sm:h-32"
           >
-            {/* Hover image - show by default */}
             <div className="relative z-10 w-full h-full flex items-center justify-center">
               <img
                 src={hover}
                 alt=""
                 className="w-[50%] h-full object-contain"
               />
-              {/* Dark overlay that disappears on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-transparent opacity-80 group-hover:opacity-0 transition duration-500 z-20" />
             </div>
-
-            {/* Background image appears on hover */}
             <img
               src={img}
               alt=""
@@ -60,56 +56,56 @@ const PreFooter = () => {
 
       {/* Second Section - CTA */}
       <div
-        className="text-white text-center py-20 md:py-32 px-4 flex flex-col items-center justify-center"
+        className="text-white text-center py-16 sm:py-20 md:py-32 px-4 flex flex-col items-center justify-center"
         style={{
           backgroundImage: `url(${imgs4})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 max-w-xl">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 max-w-xl">
           Glow your ride with energetic E-scooters
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 max-w-xl">
+        <p className="text-sm sm:text-lg md:text-xl text-gray-300 mb-5 sm:mb-6 max-w-xl">
           Empower your ride with strong Electric bikes from us
         </p>
         <Link to="/shop">
-          <button className="bg-green-500 hover:bg-green-600 transition text-white font-medium px-6 py-3 rounded-full">
+          <button className="bg-green-500 hover:bg-green-600 transition text-white font-medium px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base">
             Shop Now
           </button>
         </Link>
       </div>
 
       {/* Third Section - Features */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 md:px-12 md:py-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 md:px-12 md:py-16">
         {[
           {
-            icon: <PiTruckDuotone size={36} className="text-green-500 mb-2" />,
+            icon: <PiTruckDuotone size={32} className="text-green-500 mb-2" />,
             title: 'Fastest Delivery',
             desc: 'Delivery ordered within 24 hours',
           },
           {
-            icon: <LuCodesandbox size={36} className="text-green-500 mb-2" />,
+            icon: <LuCodesandbox size={32} className="text-green-500 mb-2" />,
             title: 'Trustworthy Service',
             desc: 'Trustworthy and reliable service provider',
           },
           {
-            icon: <MdPayment size={36} className="text-green-500 mb-2" />,
+            icon: <MdPayment size={32} className="text-green-500 mb-2" />,
             title: 'Secure Payments',
             desc: 'Payment protected by billdesk pro',
           },
           {
-            icon: <BsHeadset size={36} className="text-green-500 mb-2" />,
+            icon: <BsHeadset size={32} className="text-green-500 mb-2" />,
             title: '24*7 Support',
             desc: 'Customer service active 24*7 all-over',
           },
         ].map(({ icon, title, desc }, i) => (
           <span
             key={i}
-            className="bg-[#2b2b2b] text-white p-6 rounded-xl min-h-[220px] flex flex-col justify-start items-start text-left"
+            className="bg-[#2b2b2b] text-white p-5 sm:p-6 rounded-xl min-h-[200px] flex flex-col justify-start items-start text-left"
           >
             {icon}
-            <h3 className="text-lg font-semibold mt-2">{title}</h3>
+            <h3 className="text-base sm:text-lg font-semibold mt-2">{title}</h3>
             <p className="text-sm text-gray-300 mt-1">{desc}</p>
           </span>
         ))}
