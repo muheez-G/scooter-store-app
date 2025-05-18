@@ -44,7 +44,7 @@ const products = [
 
 const HomeThree = () => {
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 py-14 mx-auto max-w-screen-xl">
+    <div className="w-full px-8 sm:px-6 lg:px-8 py-14 mx-auto">
       {/* Header */}
       <div className="text-center mb-14">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
