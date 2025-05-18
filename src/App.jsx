@@ -10,6 +10,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Shop from './Pages/Shop';
 import NotFound from './Pages/NotFound'; // <-- Import NotFound
+import Account from './Pages/Account';
 
 const App = () => {
   return (
@@ -42,6 +43,14 @@ const App = () => {
               element={
                 <div className="px-6 py-8">
                   <Shop />
+                </div>
+              }
+            />
+            <Route
+              path="/account"
+              element={
+                <div className="px-6 py-8">
+                  <Account />
                 </div>
               }
             />
