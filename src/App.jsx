@@ -5,7 +5,7 @@ import PreNavbar from './Components/PreNavbar';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 
-import HomeMain from './Pages/HomeMain';
+import Home from './pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Shop from './Pages/Shop';
@@ -24,7 +24,7 @@ const App = () => {
 
         <div className="flex-grow">
           <Routes>
-            <Route path="/" element={<HomeMain />} />
+            <Route path="/" element={<Home />} />
             <Route
               path="/about"
               element={

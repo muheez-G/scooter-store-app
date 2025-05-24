@@ -1,4 +1,3 @@
-/*
 import React from 'react';
 import HeroBanner from '../Components/HeroBanner';
 import HeroNext from '../Components/HeroNext';
@@ -13,10 +12,9 @@ const Home = () => {
       <HeroNext/>
       <HomeThree/>
       <PreFooter/>
-      
+      {/* Add your next components here */}
     </div>
   );
 };
 
 export default Home;
-*/
