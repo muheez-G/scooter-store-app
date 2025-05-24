@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaCartPlus, FaUser, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../assets/images/GlideX_Logo.svg';
+import logo from '../Asset/GlideX_Logo.svg';
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);

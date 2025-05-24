@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Slider1 from '../assets/images/Slider_01.jpg';
-import Slider2 from '../assets/images/Slider_02.webp';
-import Slider3 from '../assets/images/Slider_03.webp';
+import Slider1 from '../Asset/Slider_01.jpg';
+import Slider2 from '../Asset/Slider_02.webp';
+import Slider3 from '../Asset/Slider_03.webp';
 import { Link } from 'react-router-dom';
 
 const images = [Slider1, Slider2, Slider3];

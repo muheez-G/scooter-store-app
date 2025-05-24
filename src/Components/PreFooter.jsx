@@ -1,18 +1,18 @@
 import React from 'react';
-import img1 from '../assets/images/IMGs_01.jpg';
-import img2 from '../assets/images/IMGs_02.jpg';
-import img3 from '../assets/images/IMGs_03.jpg';
-import img4 from '../assets/images/IMGs_04.jpg';
-import img5 from '../assets/images/IMGs_05.jpg';
-import img6 from '../assets/images/IMGs_06.jpg';
+import img1 from '../Asset/IMGs_01.jpg';
+import img2 from '../Asset/IMGs_02.jpg';
+import img3 from '../Asset/IMGs_03.jpg';
+import img4 from '../Asset/IMGs_04.jpg';
+import img5 from '../Asset/IMGs_05.jpg';
+import img6 from '../Asset/IMGs_06.jpg';
 
-import img12 from '../assets/images/Etlix.png';
-import img23 from '../assets/images/lastica.png';
-import img34 from '../assets/images/Orion.png';
-import img45 from '../assets/images/minofy.png';
-import img56 from '../assets/images/monest.png';
-import img67 from '../assets/images/happenz.png';
-import imgs4 from '../assets/images/imgs4.jpg';
+import img12 from '../Asset/Etlix.png';
+import img23 from '../Asset/lastica.png';
+import img34 from '../Asset/Orion.png';
+import img45 from '../Asset/minofy.png';
+import img56 from '../Asset/monest.png';
+import img67 from '../Asset/happenz.png';
+import imgs4 from '../Asset/imgs4.jpg';
 
 import { PiTruckDuotone } from 'react-icons/pi';
 import { MdPayment } from 'react-icons/md';

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import img2 from '../assets/images/ev-b1.5.webp';
+import img2 from '../Asset/ev-b1.5.webp';
 
 const HeroNext = () => {
   const marqueeRef = useRef(null);
