@@ -11,6 +11,9 @@ import Contact from './Pages/Contact';
 import Shop from './Pages/Shop';
 import NotFound from './Pages/NotFound'; // <-- Import NotFound
 import Account from './Pages/Account';
+import Checkout from './Pages/Checkout';
+import Cart from './Pages/Cart';
+import Tracking from './Pages/Tracking';
 
 const App = () => {
   return (
@@ -51,6 +54,30 @@ const App = () => {
               element={
                 <div className="px-6 py-8">
                   <Account />
+                </div>
+              }
+            />
+            <Route
+              path="/cart"
+              element={
+                <div className="px-6 py-8">
+                  <Cart />
+                </div>
+              }
+            />
+            <Route
+              path="/checkout"
+              element={
+                <div className="px-6 py-8">
+                  <Checkout />
+                </div>
+              }
+            />
+            <Route
+              path="/tracking"
+              element={
+                <div className="px-6 py-8">
+                  <Tracking />
                 </div>
               }
             />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaCartPlus, FaUser, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/images/GlideX_Logo.svg';
 
@@ -7,6 +7,11 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState(() => JSON.parse(localStorage.getItem('currentUser')));
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsSticky(window.scrollY > 50);
@@ -23,11 +28,41 @@ const Navbar = () => {
     return () => window.removeEventListener('storage', syncUser);
   }, []);
 
+  useEffect(() => {
+    if (location.pathname === '/shop') {
+      const shouldTrigger = sessionStorage.getItem('triggerSearchAfterRedirect') === 'true';
+      if (shouldTrigger) {
+        setIsSearchOpen(true);
+        sessionStorage.removeItem('triggerSearchAfterRedirect');
+      }
+    }
+  }, [location]);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const handleSignOut = () => {
     localStorage.removeItem('currentUser');
     setCurrentUser(null);
     setIsMenuOpen(false);
+  };
+
+  const handleSearchToggle = () => {
+    if (location.pathname === '/shop') {
+      setIsSearchOpen((prev) => !prev);
+      setSearchQuery('');
+    } else {
+      sessionStorage.setItem('triggerSearchAfterRedirect', 'true');
+      navigate('/shop');
+    }
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/shop?query=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
+    }
   };
 
   return (
@@ -49,7 +84,7 @@ const Navbar = () => {
 
           {/* Right: Desktop Icons */}
           <div className="hidden md:flex flex-1 justify-end items-center space-x-4 text-white">
-            <FaSearch className="cursor-pointer hover:text-green-500" />
+            <FaSearch onClick={handleSearchToggle} className="cursor-pointer hover:text-green-500" />
             <Link to="/account"><FaUser className="cursor-pointer hover:text-green-500" /></Link>
             <Link to="/cart"><FaCartPlus className="cursor-pointer hover:text-green-500" /></Link>
           </div>
@@ -92,6 +127,24 @@ const Navbar = () => {
           <Link to="/cart" onClick={toggleMenu} className="hover:text-green-500">Cart</Link>
         </nav>
       </div>
+
+      {/* Search input popup */}
+      {isSearchOpen && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-white rounded shadow-md p-4 w-[90%] max-w-md">
+          <form onSubmit={handleSearchSubmit} className="flex">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search products..."
+              className="flex-grow p-2 rounded-l bg-gray-100 text-black focus:outline-none"
+            />
+            <button type="submit" className="bg-green-500 px-4 rounded-r text-white hover:bg-green-600">
+              Search
+            </button>
+          </form>
+        </div>
+      )}
     </>
   );
 };
