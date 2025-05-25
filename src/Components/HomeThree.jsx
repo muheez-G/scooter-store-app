@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import product1 from '../assets/images/product1.jpg';
-import product2 from '../assets/images/product1.2.jpg';
-import product3 from '../assets/images/product11.jpg';
-import product4 from '../assets/images/product11.2.jpg';
-import product5 from '../assets/images/product12.jpg';
-import product6 from '../assets/images/product12.2.jpg';
+import product1 from '../assets/images/Product1.jpg';
+import product2 from '../assets/images/Product1.2.jpg';
+import product3 from '../assets/images/Product11.jpg';
+import product4 from '../assets/images/Product11.2.jpg';
+import product5 from '../assets/images/Product12.jpg';
+import product6 from '../assets/images/Product12.2.jpg';
 import battery from '../assets/images/Battery-icon.svg';
 import range from '../assets/images/Range-icon.svg';
 import emission from '../assets/images/Emission-icon.svg';
