@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-import person1 from '../../assets/images/person_1.jpg';
-import person2 from '../../assets/images/person_2.jpg';
-import person3 from '../../assets/images/person_5.jpg';
-import person4 from '../../assets/images/person_6.jpg';
+import person1 from '../../assets/images/Person_1.jpg';
+import person2 from '../../assets/images/Person_2.jpg';
+import person3 from '../../assets/images/Person_5.jpg';
+import person4 from '../../assets/images/Person_6.jpg';
 import rating1 from '../../assets/images/rating-40.png';
 import rating2 from '../../assets/images/rating-45.png';
 import rating3 from '../../assets/images/rating-50.png';
