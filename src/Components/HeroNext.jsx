@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import img2 from '../Asset/ev-b1.5.webp';
+// b
 
 const HeroNext = () => {
   const marqueeRef = useRef(null);
@@ -11,7 +12,7 @@ const HeroNext = () => {
 
     const marquee = marqueeRef.current;
     let offset = 0;
-    let animationFrameId;
+    let animationFrameId; 
 
     const move = () => {
       offset -= 5;
