@@ -5,15 +5,15 @@ import PreNavbar from './Components/PreNavbar';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
-import Shop from './Pages/Shop';
-import NotFound from './Pages/NotFound'; // <-- Import NotFound
-import Account from './Pages/Account';
-import Checkout from './Pages/Checkout';
-import Cart from './Pages/Cart';
-import Tracking from './Pages/Tracking';
+import Home from './Page/Home';
+import About from './Page/About';
+import Contact from './Page/Contact';
+import Shop from './Page/Shop';
+import NotFound from './Page/NotFound'; // <-- Import NotFound
+import Account from './Page/Account';
+import Checkout from './Page/Checkout';
+import Cart from './Page/Cart';
+import Tracking from './Page/Tracking';
 
 const App = () => {
   return (
