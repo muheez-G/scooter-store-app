@@ -8,7 +8,7 @@ import product6 from '../Asset/Product12.2.jpg';
 import product7 from '../Asset/Product10.jpg';
 import product8 from '../Asset/Product10.1.jpg';
 import product9 from '../Asset/Product2.jpg';
-import product10 from '../AssetProduct2.1.jpg';
+import product10 from '../Asset/Product2.1.jpg';
 import product11 from '../Asset/Product3.jpg';
 import product12 from '../Asset/Product3.2.jpg';
 import product13 from '../Asset/Product4.jpg';
