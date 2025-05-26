@@ -95,7 +95,7 @@ const Checkout = () => {
           type="text"
           name="number"
           placeholder="1234 5678 9012 3456"
-          className="w-full p-2 rounded bg-[#2b2b2b] text-black placeholder-white"
+          className="w-full p-2 rounded bg-[#2b2b2b] text-white placeholder-white"
           value={cardDetails.number}
           onChange={handleInputChange}
         />
@@ -104,7 +104,7 @@ const Checkout = () => {
             type="text"
             name="expiry"
             placeholder="MM/YY"
-            className="w-1/2 p-2 rounded bg-[#2b2b2b] text-black placeholder-white"
+            className="w-1/2 p-2 rounded bg-[#2b2b2b] text-white placeholder-white"
             value={cardDetails.expiry}
             onChange={handleInputChange}
           />
@@ -112,7 +112,7 @@ const Checkout = () => {
             type="text"
             name="cvv"
             placeholder="123"
-            className="w-1/2 p-2 rounded bg-[#2b2b2b] text-black placeholder-white"
+            className="w-1/2 p-2 rounded bg-[#2b2b2b] text-white placeholder-white"
             value={cardDetails.cvv}
             onChange={handleInputChange}
           />
@@ -120,7 +120,7 @@ const Checkout = () => {
         <textarea
           name="address"
           placeholder="Shipping Address"
-          className="w-full p-2 rounded bg-[#2b2b2b] text-black placeholder-white"
+          className="w-full p-2 rounded bg-[#2b2b2b] text-white placeholder-white"
           value={cardDetails.address}
           onChange={(e) => setCardDetails({ ...cardDetails, address: e.target.value })}
         ></textarea>

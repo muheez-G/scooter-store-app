@@ -70,7 +70,16 @@ const HomeThree = () => {
 
   const addToCart = (product) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    localStorage.setItem('cart', JSON.stringify([...cart, { ...product, quantity: 1 }]));
+
+    const existingIndex = cart.findIndex((item) => item.id === product.id);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
     setSuccessMessageId(product.id);
     setTimeout(() => setSuccessMessageId(null), 2000);
   };
@@ -148,41 +157,40 @@ const HomeThree = () => {
       </div>
 
       {modalProduct && (
-  <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-center p-4 sm:p-6">
-    <div className="relative bg-[#1e1e1e] rounded-xl w-full max-w-md sm:max-w-4xl mx-auto p-5 sm:p-8 flex flex-col sm:flex-row overflow-auto max-h-[90vh]">
-      <button
-        onClick={closeModal}
-        className="absolute top-3 right-3 text-white text-lg hover:text-red-500"
-      >
-        ✕
-      </button>
-      <img
-        src={modalProduct.image}
-        alt={modalProduct.name}
-        className="w-full sm:w-1/2 h-auto rounded-lg object-cover mb-4 sm:mb-0 sm:mr-6"
-      />
-      <div className="text-white w-full">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3">{modalProduct.name}</h2>
-        <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
-          {modalProduct.description}
-        </p>
-        <p className="text-lg font-semibold mb-4">${modalProduct.price}</p>
-        <button
-          onClick={() => addToCart(modalProduct)}
-          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full sm:w-auto"
-        >
-          Add to Cart
-        </button>
-        {successMessageId === modalProduct.id && (
-          <div className="mt-4 text-green-400 text-center text-sm">
-            Added to cart successfully!
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-center p-4 sm:p-6">
+          <div className="relative bg-[#1e1e1e] rounded-xl w-full max-w-md sm:max-w-4xl mx-auto p-5 sm:p-8 flex flex-col sm:flex-row overflow-auto max-h-[90vh]">
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-3 text-white text-lg hover:text-red-500"
+            >
+              ✕
+            </button>
+            <img
+              src={modalProduct.image}
+              alt={modalProduct.name}
+              className="w-full sm:w-1/2 h-auto rounded-lg object-cover mb-4 sm:mb-0 sm:mr-6"
+            />
+            <div className="text-white w-full">
+              <h2 className="text-xl sm:text-2xl font-bold mb-3">{modalProduct.name}</h2>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+                {modalProduct.description}
+              </p>
+              <p className="text-lg font-semibold mb-4">${modalProduct.price}</p>
+              {successMessageId === modalProduct.id && (
+                <div className="mt-4 text-green-400 text-left text-sm">
+                  Added to cart successfully!
+                </div>
+              )}
+              <button
+                onClick={() => addToCart(modalProduct)}
+                className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full sm:w-auto"
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
-        )}
-      </div>
-    </div>
-  </div>
-)}
-
+        </div>
+      )}
 
       <div className="bg-[#2b2b2b] mt-16 rounded-xl px-6 py-8 text-white shadow-lg text-center">
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">

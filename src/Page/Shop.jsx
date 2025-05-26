@@ -124,10 +124,10 @@ const Shop = () => {
                 Discover the pinnacle of innovation with the {selectedProduct.name}, engineered for efficiency, performance, and modern urban lifestyles. Designed with cutting-edge components and an eye for aesthetics, it’s your perfect partner for everyday travel and weekend adventures alike.
               </p>
               <p className="text-lg font-semibold text-white mb-4">${selectedProduct.price}</p>
-              <button onClick={addToCart} className="bg-green-500 hover:bg-green-600 w-full py-2 rounded font-medium">Add to Cart</button>
               {showSuccess && (
                 <div className="text-green-400 mt-4 text-center font-medium">Item successfully added to cart!</div>
               )}
+              <button onClick={addToCart} className="bg-green-500 hover:bg-green-600 w-full py-2 rounded font-medium">Add to Cart</button>
             </div>
           </div>
         </div>
